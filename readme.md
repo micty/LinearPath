@@ -52,8 +52,10 @@ var list = LinearPath.linearize({
     ]
 });
 
-//则 list = 
+
 ```
+则 list = 
+
 ``` json
 [
     "C:/demo/partial/default/begin.js",
@@ -92,8 +94,10 @@ var list = LinearPath.pair('C:/from', 'D:/to', [
     'end.js'
 ]);
 
-//得到 list =  
+
 ```
+得到 list =  
+
 ``` json
 [
     {
