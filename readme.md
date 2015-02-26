@@ -2,6 +2,7 @@
 ## LinearPath JavaScript Library
 
 LinearPath 是一个 JavaScript 库，主要用于把以 JSON|Object 方式表示的路径结构转换成一个一维的数组表示形式，从而可以进一步用自动化处理脚本中。
+该库针对浏览器和 Node 环境分别进行单独构建，且生成 debug 和 min 两个版本，方便用户根据需要使用，构建输出于 `build/` 目录。
 
 ###结构中的字段
 
