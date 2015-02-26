@@ -7,7 +7,7 @@ LinearPath 是一个 JavaScript 库，主要用于把以 JSON|Object 方式表示的路径结构转换
 ###示例
 
 ####把一个 JSON|Object 结构化的路径线性化成一个数组
-```javascript```
+``` javascript
 
 var list = LinearPath.linearize({
     dir: 'C:/demo',
@@ -72,11 +72,12 @@ var list = LinearPath.linearize({
     "C:/demo/partial/default/expose.js",
     "C:/demo/partial/default/end.js"
 ];
-```javascript```
+```
 
 
 ####把一个 JSON|Object 结构化的路径线性化并且两两组合成一个数组
-```javascript```
+
+``` javascript
 var list = LinearPath.pair('C:/from', 'D:/to', [
     'begin.js',
     {
@@ -109,5 +110,5 @@ var list = LinearPath.pair('C:/from', 'D:/to', [
     }
 ]
 
-```javascript```
+```
 
