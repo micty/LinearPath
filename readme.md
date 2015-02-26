@@ -6,9 +6,9 @@ LinearPath 是一个 JavaScript 库，主要用于把以 JSON|Object 方式表示的路径结构转换
 ###结构中的字段
 
 名称 | 类型 | 必选 | 默认值 | 描述 
----- |
-`dir` | `string` | 是 | `null` | 当前目录的名称
-`files` | `Array` | 是 |  `null` | 当前目录下的下级文件/目录
+---- | ---- | ---- |---- |---- |
+`dir` | `string` | 是 | `null` | 当前目录的名称。
+`files` | `Array` | 是 | `null` | 当前目录下的下级文件/目录。
 
 
 ###示例
