@@ -53,15 +53,17 @@ var list = linearpath({
 
 ``` json
 [
-    'C:/demo/partial/default/begin.js',
-    'C:/demo/core/Array.js',
-    'C:/demo/core/Boolean.js',
-    'C:/demo/core/Date.js',
-    'C:/demo/excore/Emitter/Tree.js',
-    'C:/demo/excore/Emitter.js',
-    'C:/demo/excore/Mapper.js',
-    'C:/demo/partial/default/end.js'
-];
+    "C:/demo/partial/default/begin.js",
+    "C:/demo/core/Array.js",
+    "C:/demo/core/Boolean.js",
+    "C:/demo/core/Date.js",
+    "C:/demo/excore/Emitter/Tree.js",
+    "C:/demo/excore/Emitter.js",
+    "C:/demo/excore/Mapper.js",
+    "C:/demo/partial/default/expose.js",
+    "C:/demo/partial/default/end.js"
+]
+
 ```
 
 

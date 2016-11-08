@@ -1,6 +1,6 @@
 {
     "name": "linearpath",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "linearize structural path data to a single dimesion array",
     "main": "linearpath.js",
     "scripts": {
