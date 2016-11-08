@@ -1,0 +1,23 @@
+{
+    "name": "linearpath",
+    "version": "0.1.0",
+    "description": "linearize structural path data to a single dimesion array",
+    "main": "linearpath.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "linearize",
+        "path"
+    ],
+    "author": {
+        "name": "mictydeng",
+        "email": "mictydeng@qq.com"
+    },
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/micty/LinearPath.git"
+    },
+    "dependencies": { }
+}

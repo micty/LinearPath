@@ -1,8 +1,0 @@
-﻿
-;( function (
-    global, 
-    module,
-    undefined
-) {
-
-

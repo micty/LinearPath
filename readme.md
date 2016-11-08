@@ -1,37 +1,28 @@
 
-## LinearPath JavaScript Library
+# linearpath
 
-LinearPath 是一个 JavaScript 库，主要用于把以 JSON|Object 方式表示的路径结构转换成一个一维的数组表示形式，从而可以进一步用自动化处理脚本中。
-该库针对浏览器和 Node 环境分别进行单独构建，且生成 debug 和 min 两个版本，方便用户根据需要使用，构建输出于 `build/` 目录。
+linearpath 主要用于把以对象方式表示的路径结构转换成一个一维的数组表示形式，从而可以进一步用自动化处理脚本中。
 
-###结构中的字段
-
-名称 | 类型 | 必选 | 默认值 | 描述 
----- | ---- | ---- |---- |---- |
-`dir` | `string` | 是 | `null` | 当前目录的名称。
-`files` | `Array` | 是 | `null` | 当前目录下的下级文件/目录。
+##应用场景
+在很多基于 node.js 的自动化处理任务中，经常需要用到文件路径。对于多个文件路径，常规用法是使用数组。一维的数组表示的文件路径，不直观，也不方便修改基于某个目录内的文件名。因此，有必要把文件路径结构化表示出来，且是对应于原目录结构的。
 
 
-###示例
+##示例
 
-####把一个 JSON|Object 结构化的路径线性化成一个数组
+把一个对象结构化的路径线性化成一个一维的数组。
 ``` javascript
 
-var list = LinearPath.linearize({
+var linearpath = require('linearpath');
+var list = linearpath({
     dir: 'C:/demo',
     files: [
         'partial/default/begin.js',
         {
             dir: 'core',
             files: [
-                'Module.js',
-                '$.js',
                 'Array.js',
                 'Boolean.js',
                 'Date.js',
-                'Math.js',
-                'Object.js',
-                'String.js',
             ]
         },
         {
@@ -45,15 +36,11 @@ var list = LinearPath.linearize({
                 },
                 'Emitter.js',
                 'Mapper.js',
-                'Module.js',
-                'Url.js',
             ]
         },
         {
             dir: 'partial/default',
             files: [
-                'MiniQuery.js',
-                'expose.js',
                 'end.js',
             ]
         },
@@ -66,65 +53,24 @@ var list = LinearPath.linearize({
 
 ``` json
 [
-    "C:/demo/partial/default/begin.js",
-    "C:/demo/core/Module.js",
-    "C:/demo/core/$.js",
-    "C:/demo/core/Array.js",
-    "C:/demo/core/Boolean.js",
-    "C:/demo/core/Date.js",
-    "C:/demo/core/Math.js",
-    "C:/demo/core/Object.js",
-    "C:/demo/core/String.js",
-    "C:/demo/excore/Emitter/Tree.js",
-    "C:/demo/excore/Emitter.js",
-    "C:/demo/excore/Mapper.js",
-    "C:/demo/excore/Module.js",
-    "C:/demo/excore/Url.js",
-    "C:/demo/partial/default/MiniQuery.js",
-    "C:/demo/partial/default/expose.js",
-    "C:/demo/partial/default/end.js"
+    'C:/demo/partial/default/begin.js',
+    'C:/demo/core/Array.js',
+    'C:/demo/core/Boolean.js',
+    'C:/demo/core/Date.js',
+    'C:/demo/excore/Emitter/Tree.js',
+    'C:/demo/excore/Emitter.js',
+    'C:/demo/excore/Mapper.js',
+    'C:/demo/partial/default/end.js'
 ];
 ```
 
 
-####把一个 JSON|Object 结构化的路径线性化并且两两组合成一个数组
-
-``` javascript
-var list = LinearPath.pair('C:/from', 'D:/to', [
-    'begin.js',
-    {
-        dir: 'src',
-        files: [
-            'Array.js',
-            'Boolean.js'
-        ]
-    },
-    'end.js'
-]);
 
 
-```
-得到 list =  
+###结构中的字段
 
-``` json
-[
-    {
-        "src": "C:/from/begin.js",
-        "dest": "D:/to/begin.js"
-    },
-    {
-        "src": "C:/from/src/Array.js",
-        "dest": "D:/to/src/Array.js"
-    },
-    {
-        "src": "C:/from/src/Boolean.js",
-        "dest": "D:/to/src/Boolean.js"
-    },
-    {
-        "src": "C:/from/end.js",
-        "dest": "D:/to/end.js"
-    }
-]
-
-```
+名称 | 类型 | 必选 | 默认值 | 描述 
+---- | ---- | ---- |---- |---- |
+`dir` | `string` | 是 | `` | 当前目录的名称。
+`files` | `Array` | 是 | `[]` | 当前目录下的下级文件/目录。
 
